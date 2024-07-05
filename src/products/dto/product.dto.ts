@@ -9,7 +9,7 @@ export class ProductDto {
   @ApiProperty({ example: 20, description: 'Product price' })
   readonly price: number;
   @ApiProperty({
-    example: [randomUUID(), randomUUID()],
+    example: [`${randomUUID()}.png`, `${randomUUID()}.png`],
     description: 'Product name',
   })
   readonly imageUrls: string[];
