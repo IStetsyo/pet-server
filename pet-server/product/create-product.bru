@@ -1,0 +1,32 @@
+meta {
+  name: create-product
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{BASE_URL}}/products/create
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{ACCESS_TOKEN}}
+}
+
+body:json {
+  {
+    "name": "test",
+    "price": 10,
+    "userId": 3,
+    "description": "test"
+  }
+}
+
+body:multipart-form {
+  images: @file(/home/stetsyo/Pictures/Screenshots/Screenshot from 2024-06-25 18.16.32.png|/home/stetsyo/Pictures/Screenshots/Screenshot from 2024-06-17 21.02.01.png)
+  userId: 3
+  name: test
+  description: test
+  price: 20
+}

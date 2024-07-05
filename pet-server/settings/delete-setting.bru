@@ -1,0 +1,15 @@
+meta {
+  name: delete-setting
+  type: http
+  seq: 4
+}
+
+delete {
+  url: {{BASE_URL}}/settings/{{SETTING_ID}}
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{ACCESS_TOKEN}}
+}

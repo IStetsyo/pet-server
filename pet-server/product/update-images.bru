@@ -1,0 +1,19 @@
+meta {
+  name: update-images
+  type: http
+  seq: 5
+}
+
+patch {
+  url: {{BASE_URL}}/products/{{PRODUCT_ID}}/images
+  body: multipartForm
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{ACCESS_TOKEN}}
+}
+
+body:multipart-form {
+  images: @file(/home/stetsyo/Pictures/Screenshots/Screenshot from 2024-06-25 18.16.32.png|/home/stetsyo/Pictures/Screenshots/Screenshot from 2024-06-17 21.02.01.png)
+}

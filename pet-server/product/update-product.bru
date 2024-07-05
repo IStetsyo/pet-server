@@ -1,0 +1,23 @@
+meta {
+  name: update-product
+  type: http
+  seq: 4
+}
+
+patch {
+  url: {{BASE_URL}}/products/{{PRODUCT_ID}}
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{ACCESS_TOKEN}}
+}
+
+body:json {
+  {
+    "name": "updated_test",
+    "description": "updated_test",
+    "price": 30
+  }
+}
