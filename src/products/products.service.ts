@@ -36,9 +36,9 @@ export class ProductsService {
     return this.prisma.product.create({
       data: {
         ...input,
-        userId: +input.userId,
         price: +input.price,
         imageUrls,
+        userId: +input.userId,
       },
     });
   }
