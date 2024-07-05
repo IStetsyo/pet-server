@@ -14,11 +14,11 @@ services:
     ports:
       - 3000:3000
       - 9229:9229
-
-    command: bash -c "npx prisma migrate resolve --applied 20240705065628_init && npm run start:dev"
+    entrypoint: ['/app/migrate.sh']
+    command: npm run start:dev
     depends_on:
       - postgres
-    restart: no
+    restart: always
 
   postgres:
     container_name: postgres
